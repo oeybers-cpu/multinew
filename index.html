@@ -14,16 +14,17 @@
         }
 
         :root {
-            --primary: #0ff;
-            --secondary: #f0f;
-            --accent: #9d4edd;
-            --dark: #0a0a14;
-            --darker: #050508;
-            --light: #f0f0f0;
-            --card-bg: rgba(20, 20, 30, 0.7);
-            /* Define header heights for scroll margins and top spacing */
-            --top-header-height: 160px; /* Approximate height of fixed header on large screens */
-            --top-header-height-sm: 140px; /* Approximate height of fixed header on small screens */
+            /* Updated color palette to be more blue/aqua/turquoise */
+            --primary: #00ffff; /* Cyan/Aqua */
+            --secondary: #00ced1; /* Dark Turquoise */
+            --accent: #40e0d0; /* Turquoise */
+            --dark: #0a1a2a; /* Darker blue background */
+            --darker: #050f1a; /* Even darker blue */
+            --light: #e0f7fa; /* Light cyan text */
+            --card-bg: rgba(15, 30, 45, 0.8); /* Dark blueish card background */
+            /* Adjusted header heights for the narrower header */
+            --top-header-height: 120px; /* Reduced height for large screens */
+            --top-header-height-sm: 100px; /* Reduced height for small screens */
         }
 
         body {
@@ -49,7 +50,6 @@
             }
         }
 
-
         body::before {
             content: '';
             position: absolute;
@@ -57,10 +57,11 @@
             left: 0;
             width: 100%;
             height: 100%;
+            /* Updated background gradients to match new color scheme */
             background:
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.03) 0%, transparent 30%);
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.07) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 206, 209, 0.07) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(64, 224, 208, 0.05) 0%, transparent 30%);
             pointer-events: none;
             z-index: -2;
         }
@@ -72,8 +73,9 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+                /* Updated grid lines to match new color scheme */
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
             pointer-events: none;
             z-index: -1;
@@ -81,7 +83,7 @@
 
         .container {
             max-width: 1400px;
-            /* Adjust top margin to account for fixed header */
+            /* Adjust top margin to account for fixed header - uses updated CSS variables */
             margin: var(--top-header-height) auto 0;
             position: relative;
         }
@@ -93,17 +95,19 @@
             }
         }
 
-        /* Make header fixed */
+        /* Make header fixed and narrower */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             text-align: center;
-            /* Adjusted padding slightly for better spacing */
-            padding: 20px 0 10px;
-            background: linear-gradient(to right, rgba(0, 255, 255, 0.1), transparent);
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            /* Reduced padding to make header narrower */
+            padding: 12px 0 8px;
+            /* Updated background gradient */
+            background: linear-gradient(to right, rgba(0, 255, 255, 0.15), transparent);
+            /* Updated border color */
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
             /* Removed default margins and rounded corners for a cleaner fixed appearance */
             margin: 0;
             border-radius: 0;
@@ -113,17 +117,18 @@
             backdrop-filter: blur(10px);
         }
 
-
         h1 {
             font-size: 2.4rem;
             margin-bottom: 7.5px;
+            /* Updated gradient colors */
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-transform: uppercase;
             letter-spacing: 2.25px;
-            text-shadow: 0 0 11.25px rgba(0, 255, 255, 0.5);
+            /* Updated text shadow */
+            text-shadow: 0 0 11.25px rgba(0, 255, 255, 0.7);
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             position: relative;
@@ -139,13 +144,14 @@
             left: 10%;
             width: 80%;
             height: 1.5px;
+            /* Updated gradient colors */
             background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
             border-radius: 50%;
         }
 
         .subtitle {
             font-size: 0.825rem;
-            color: #aaa;
+            color: #a0d8e4; /* Slightly different subtitle color */
             max-width: 800px;
             margin: 11.25px auto 15px;
             line-height: 1.6;
@@ -162,13 +168,15 @@
 
         .contact-card {
             background: var(--card-bg);
-            border: 1px solid rgba(0, 255, 255, 0.1);
+            /* Updated border color */
+            border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 11.25px;
             padding: 15px;
             max-width: 600px;
             margin: 22.5px auto;
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 22.5px rgba(0, 255, 255, 0.1);
+            /* Updated box shadow */
+            box-shadow: 0 0 22.5px rgba(0, 255, 255, 0.15);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -190,6 +198,7 @@
             left: 0;
             width: 100%;
             height: 3px;
+            /* Updated gradient colors */
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transform-origin: left;
@@ -198,7 +207,8 @@
 
         .contact-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.3);
+            /* Updated box shadow on hover */
+            box-shadow: 0 7.5px 30px rgba(0, 255, 255, 0.4);
         }
 
         .contact-card:hover::before {
@@ -206,6 +216,7 @@
         }
 
         .contact-card h2 {
+            /* Updated text color */
             color: var(--primary);
             margin-bottom: 11.25px;
             font-size: 1.2rem;
@@ -216,7 +227,8 @@
         }
 
         .contact-card a {
-            color: var(--primary);
+            /* Updated link color */
+            color: var(--accent);
             text-decoration: none;
             font-size: 0.825rem;
             transition: all 0.3s ease;
@@ -227,8 +239,10 @@
         }
 
         .contact-card a:hover {
+            /* Updated hover color */
             color: var(--secondary);
-            text-shadow: 0 0 11.25px rgba(255, 0, 255, 0.7);
+            /* Updated text shadow */
+            text-shadow: 0 0 11.25px rgba(0, 206, 209, 0.9);
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -236,12 +250,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             gap: 30px;
-            margin: 30px 0;
+            /* Increased top margin to ensure cards don't clash with the narrower header */
+            margin: 50px 0 30px;
         }
 
         .article-card {
             background: var(--card-bg);
-            border: 1px solid rgba(0, 255, 255, 0.1);
+            /* Updated border color */
+            border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 11.25px;
             padding: 18.75px;
             transition: all 0.4s ease;
@@ -269,6 +285,7 @@
             left: 0;
             width: 100%;
             height: 3px;
+            /* Updated gradient colors */
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transform-origin: left;
@@ -277,8 +294,10 @@
 
         .article-card:hover {
             transform: translateY(-7.5px);
-            box-shadow: 0 11.25px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(0, 255, 255, 0.4);
+            /* Updated box shadow on hover */
+            box-shadow: 0 11.25px 30px rgba(0, 100, 150, 0.5);
+            /* Updated border color on hover */
+            border-color: rgba(0, 255, 255, 0.5);
         }
 
         .article-card:hover::before {
@@ -286,7 +305,8 @@
         }
 
         .article-card h3 {
-            color: var(--primary);
+            /* Updated text color */
+            color: var(--accent);
             font-size: 1.1rem;
             margin-bottom: 11.25px;
             line-height: 1.4;
@@ -301,7 +321,7 @@
         }
 
         .article-content {
-            color: #ddd;
+            color: #cce6e9; /* Slightly different content text color */
             font-size: 0.9rem;
             line-height: 1.6;
             margin-bottom: 15px;
@@ -313,12 +333,15 @@
         }
 
         .citation {
-            background: rgba(0, 255, 255, 0.1);
+            /* Updated background */
+            background: rgba(0, 255, 255, 0.15);
+            /* Updated text color */
             color: var(--primary);
             padding: 3.75px 9px;
             border-radius: 15px;
             font-size: 0.7rem;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            /* Updated border */
+            border: 1px solid rgba(0, 255, 255, 0.3);
             display: inline-block;
             margin: 5px 0;
         }
@@ -331,30 +354,38 @@
         }
 
         .meta-tag {
-            background: rgba(0, 255, 255, 0.1);
+            /* Updated background */
+            background: rgba(0, 255, 255, 0.15);
+            /* Updated text color */
             color: var(--primary);
             padding: 3.75px 9px;
             border-radius: 15px;
             font-size: 0.6375rem;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            /* Updated border */
+            border: 1px solid rgba(0, 255, 255, 0.3);
         }
 
         .new-tag {
-            background: rgba(157, 78, 221, 0.2);
+            /* Updated background */
+            background: rgba(64, 224, 208, 0.2);
+            /* Updated text color */
             color: var(--accent);
-            border-color: rgba(157, 78, 221, 0.3);
+            /* Updated border color */
+            border-color: rgba(64, 224, 208, 0.4);
         }
 
         .article-link {
             display: inline-block;
             color: var(--light);
-            background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(157, 78, 221, 0.2));
+            /* Updated background gradient */
+            background: linear-gradient(90deg, rgba(0, 255, 255, 0.25), rgba(64, 224, 208, 0.25));
             padding: 7.5px 15px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 255, 255, 0.3);
+            /* Updated border */
+            border: 1px solid rgba(0, 255, 255, 0.4);
             text-align: center;
             width: 100%;
             font-family: 'Orbitron', sans-serif;
@@ -371,14 +402,17 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            /* Updated animation gradient */
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: 0.5s;
         }
 
         .article-link:hover {
+            /* Updated background gradient on hover */
             background: linear-gradient(90deg, var(--primary), var(--accent));
             color: var(--darker);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            /* Updated box shadow on hover */
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
             transform: translateY(-2.25px);
         }
 
@@ -389,9 +423,10 @@
         .footer {
             text-align: center;
             padding: 30px 0 15px;
-            color: #777;
+            color: #88c5d1; /* Slightly different footer text color */
             font-size: 0.675rem;
-            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            /* Updated border color */
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
             margin-top: 22.5px;
         }
 
@@ -402,27 +437,32 @@
         .university-logo {
             width: 120px;
             margin: 11.25px auto;
-            filter: brightness(0.8);
-            opacity: 0.7;
+            filter: brightness(0.9) sepia(1) hue-rotate(150deg) saturate(3); /* Tinted the logo */
+            opacity: 0.8;
         }
 
         .footer-link {
             display: inline-block;
             margin-top: 15px;
-            color: var(--primary);
+            /* Updated link color */
+            color: var(--accent);
             text-decoration: none;
             font-size: 0.9rem;
             transition: all 0.3s ease;
             padding: 5px 10px;
             border-radius: 4px;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            /* Updated border */
+            border: 1px solid rgba(0, 255, 255, 0.3);
         }
 
         .footer-link:hover {
+            /* Updated hover color */
             color: var(--secondary);
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+            /* Updated text shadow */
+            text-shadow: 0 0 10px rgba(0, 206, 209, 0.9);
             background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 0, 255, 0.3);
+            /* Updated border color on hover */
+            border-color: rgba(0, 206, 209, 0.4);
         }
 
         .footer-links-container {
@@ -503,7 +543,7 @@
 
             <div class="contact-card" id="key-finding">
                 <h2><i class="fas fa-language"></i> Key Finding</h2>
-                <p style="color: #ccc; font-size: 0.8rem; margin-top: 10px;">"Multilingual education in African universities requires addressing systemic barriers while leveraging translanguaging, linguistic rights, and digital technologies for meaningful transformation."</p>
+                <p style="color: #cce6e9; font-size: 0.8rem; margin-top: 10px;">"Multilingual education in African universities requires addressing systemic barriers while leveraging translanguaging, linguistic rights, and digital technologies for meaningful transformation."</p>
             </div>
         </header>
 
@@ -581,10 +621,10 @@
 
         <div class="footer">
             <div class="university-logo">
-                <svg viewBox="0 0 100 30" fill="#9d4edd">
-                    <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#0ff" stroke-width="2" fill="none"/>
-                    <circle cx="50" cy="15" r="5" fill="#0ff"/>
-                    <text x="50" y="25" text-anchor="middle" fill="#aaa" font-size="8">LANGUAGE RESEARCH</text>
+                <svg viewBox="0 0 100 30" fill="#40e0d0">
+                    <path d="M10,15 Q20,5 30,15 T50,15 T70,15 T90,15" stroke="#00ffff" stroke-width="2" fill="none"/>
+                    <circle cx="50" cy="15" r="5" fill="#00ffff"/>
+                    <text x="50" y="25" text-anchor="middle" fill="#a0d8e4" font-size="8">LANGUAGE RESEARCH</text>
                 </svg>
             </div>
             <p>© 2024 Multilingualism Research Portal</p>
@@ -642,13 +682,12 @@
             // Add pulse animation to contact card
             const contactCard = document.querySelector('.contact-card');
             setInterval(() => {
-                contactCard.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.3)';
+                contactCard.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.4)';
                 setTimeout(() => {
-                    contactCard.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.1)';
+                    contactCard.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.15)';
                 }, 1000);
             }, 3000);
         });
     </script>
 </body>
 </html>
-
