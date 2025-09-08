@@ -355,14 +355,40 @@
             border: var(--card-border-width) solid rgba(0, 255, 255, 0.3);
         }
 
-        /* --- Specific adjustment for the image in the 'African Languages as Transformation Tools' card --- */
-        /* Target the image within the card with id 'transformation-tools' */
-        #transformation-tools .article-image {
-            /* Adjust the object-position to move the image up slightly, showing more of the face */
-            /* Increased the Y offset to 15% to bring the face into view */
-            object-position: center 15%; /* Move the focus point up */
+        /* --- Specific adjustment for the image in the 'Digitalization' card (second row, right) --- */
+        #digitalization .article-image {
+            /* Adjust the object-position to move the image down, showing more of the face */
+            /* Try center 40% or 45% to bring the face into view */
+            object-position: center 40%; /* Move the focus point down */
         }
         /* --- End of specific adjustment --- */
+
+        /* --- Styles for the embedded "African Languages" content --- */
+        .embedded-content {
+            width: 100%;
+            height: 180px; /* Match the image height */
+            margin: 0 0 15px 0;
+            border-radius: 6px;
+            border: var(--card-border-width) solid rgba(0, 255, 255, 0.3);
+            overflow: hidden; /* Contain the content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black; /* Match the embedded page's background */
+        }
+        .embedded-content h1 {
+            color: white;
+            font-size: 2em; /* Reduced font size for better fit */
+            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; /* Reduced shadow intensity */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            /* Allow text to wrap if needed */
+            word-break: break-word;
+            line-height: 1.2;
+        }
+        /* --- End of styles for embedded content --- */
 
         /* --- End of added/updated styles --- */
 
@@ -510,9 +536,11 @@
             .articles-container {
                 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             }
-             #transformation-tools .article-image {
-                /* Adjust the object-position for smaller screens if needed */
-                object-position: center 20%; /* Slightly less adjustment on smaller screens */
+             #digitalization .article-image {
+                object-position: center 45%; /* Slightly less adjustment on smaller screens */
+            }
+             .embedded-content h1 {
+                font-size: 1.5em; /* Further reduce font size on medium screens */
             }
         }
 
@@ -528,11 +556,14 @@
             .subtitle {
                 font-size: 0.75rem;
             }
-             .article-image {
-                 height: 160px; /* Slightly reduce image height on medium screens */
+             .article-image, .embedded-content {
+                 height: 160px; /* Slightly reduce image/content height on medium screens */
             }
-             #transformation-tools .article-image {
-                object-position: center 25%; /* Further adjust for medium screens */
+             #digitalization .article-image {
+                object-position: center 50%; /* Even less adjustment on medium screens */
+            }
+             .embedded-content h1 {
+                font-size: 1.8em; /* Adjust font size for medium screens */
             }
         }
 
@@ -546,11 +577,14 @@
                 width: 12px;
                 height: 12px;
             }
-             .article-image {
-                 height: 150px; /* Further reduce image height on smaller screens */
+             .article-image, .embedded-content {
+                 height: 150px; /* Further reduce image/content height on smaller screens */
             }
-             #transformation-tools .article-image {
-                object-position: center 30%; /* Even less adjustment on small screens */
+             #digitalization .article-image {
+                object-position: center 55%; /* Least adjustment on small screens */
+            }
+             .embedded-content h1 {
+                font-size: 1.6em; /* Adjust font size for small screens */
             }
         }
 
@@ -580,11 +614,15 @@
                 width: 10px;
                 height: 10px;
             }
-             .article-image {
-                 height: 140px; /* Further reduce image height on very small screens */
+             .article-image, .embedded-content {
+                 height: 140px; /* Further reduce image/content height on very small screens */
             }
-             #transformation-tools .article-image {
-                object-position: center 35%; /* Least adjustment on very small screens */
+             #digitalization .article-image {
+                object-position: center 60%; /* Least adjustment on very small screens */
+            }
+             .embedded-content h1 {
+                font-size: 1.4em; /* Adjust font size for very small screens */
+                text-shadow: 0 0 3px white, 0 0 6px white; /* Reduce shadow further */
             }
         }
     </style>
@@ -636,12 +674,14 @@
                 </div>
             </div>
 
-            <!-- Focus Area 3 - WITH PLACEHOLDER IMAGE -->
+            <!-- Focus Area 3 - WITH EMBEDDED CONTENT ("African Languages" heading) -->
             <div class="article-card" id="linguistic-rights">
                 <h3><i class="fas fa-microphone"></i> Linguistic Rights and Social Justice</h3>
                 <div class="article-content">
-                    <!-- PLACEHOLDER IMAGE FOR LINGUISTIC RIGHTS - Add your image URL to the src attribute -->
-                    <img src="" alt="Illustration representing linguistic rights and social justice" class="article-image">
+                    <!-- EMBEDDED "African Languages" HEADING CONTENT -->
+                    <div class="embedded-content">
+                        <h1>African Languages</h1>
+                    </div>
                     <p>Linguistic rights encompass the right to use one's native language in educational, administrative, and public contexts. In African higher education, recognizing these rights is fundamental to social justice and equitable participation.</p>
                     <p>The dominance of colonial languages in African universities creates barriers for students whose first languages are marginalized. This linguistic inequality perpetuates broader social and economic disparities.</p>
                     <p>Advocating for linguistic rights involves policy reform, institutional support for multilingualism, and challenging ideologies that frame African languages as inadequate for academic discourse.</p>
@@ -652,12 +692,12 @@
                 </div>
             </div>
 
-            <!-- Focus Area 4 - WITH LINGUISTIC RIGHTS IMAGE (MOVED HERE) -->
+            <!-- Focus Area 4 - WITH LINGUISTIC RIGHTS IMAGE (MOVED HERE, POSITION ADJUSTED) -->
             <div class="article-card" id="digitalization">
                 <h3><i class="fas fa-laptop-code"></i> Digitalization of African Languages</h3>
                 <div class="article-content">
-                    <!-- MOVED LINGUISTIC RIGHTS IMAGE HERE -->
-                    <img src="https://github.com/oeybers-cpu/multinew/blob/main/Computer%20lap%20investigation.png?raw=true" alt="Illustration representing linguistic rights and social justice (moved to Digitalization card)" class="article-image">
+                    <!-- MOVED LINGUISTIC RIGHTS IMAGE HERE (Position Adjusted to show face) -->
+                    <img src="https://sta.uwi.edu/uwitoday/archive/july_2018/images/art18_1.jpg" alt="Illustration representing linguistic rights and social justice (moved to Digitalization card)" class="article-image">
                     <p>The digitalization of African languages is crucial for their relevance in modern education systems. This includes developing language technologies, digital corpora, and educational resources in indigenous languages.</p>
                     <p>Current challenges include limited digital text corpora for African languages, which hinders the development of language technologies like spell checkers, translation tools, and voice recognition systems. This digital divide reinforces the marginalization of African languages.</p>
                     <p>Bridging this gap requires investment in computational linguistics, collaborative projects between universities and tech companies, and open-access repositories for language resources.</p>
