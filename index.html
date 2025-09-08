@@ -171,6 +171,71 @@
             }
         }
 
+        /* Navigation buttons */
+        .nav-buttons {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-button {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .home-button {
+            color: orange;
+            border-color: orange;
+        }
+
+        .home-button:hover {
+            background-color: rgba(255, 165, 0, 0.2);
+        }
+
+        .contact-button {
+            color: #1e90ff; /* Dodger blue */
+            border-color: #1e90ff;
+        }
+
+        .contact-button:hover {
+            background-color: rgba(30, 144, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                top: 10px;
+                right: 10px;
+                gap: 10px;
+            }
+            
+            .nav-button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-buttons {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            h1 {
+                margin-bottom: 5px;
+            }
+        }
+
         .contact-card {
             background: var(--card-bg);
             /* Updated border color and standardized */
@@ -661,6 +726,12 @@
         <header>
             <h1>Multilingualism in Higher Education</h1>
             <p class="subtitle">A critical perspective on the challenges and opportunities of multilingualism in African universities</p>
+            
+            <!-- Navigation buttons -->
+            <div class="nav-buttons">
+                <a href="https://oeybers-cpu.github.io/a_lit_models/" class="nav-button home-button">Home</a>
+                <a href="https://oeybers-cpu.github.io/contact/" class="nav-button contact-button">Contact</a>
+            </div>
         </header>
 
         <div class="contact-card" id="key-finding">
@@ -806,5 +877,4 @@
             }, 3000);
         });
     </script>
-</body>
-</html>
+
