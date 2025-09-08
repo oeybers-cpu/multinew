@@ -347,7 +347,8 @@
             /* Adjusted height for standardization, using landscape format */
             height: 180px;
             object-fit: cover; /* Cover ensures the image fills the area without distortion */
-            object-position: center; /* Center the image */
+            /* Default object-position */
+            object-position: center;
             display: block;
             margin: 0 0 15px 0;
             border-radius: 6px;
@@ -355,11 +356,10 @@
             border: var(--card-border-width) solid rgba(0, 255, 255, 0.3);
         }
 
-        /* --- Specific adjustment for the image in the 'Digitalization' card (second row, right) --- */
-        #digitalization .article-image {
-            /* Adjust the object-position to move the image down, showing more of the face */
-            /* Try center 40% or 45% to bring the face into view */
-            object-position: center 40%; /* Move the focus point down */
+        /* --- Specific adjustment for the image in the 'Translanguaging' card (top row, left) --- */
+        #translanguaging .article-image {
+            /* Adjust the object-position to move the image down slightly, showing more of the elder's face */
+            object-position: center 35%; /* Move the focus point down */
         }
         /* --- End of specific adjustment --- */
 
@@ -379,7 +379,8 @@
         .embedded-content h1 {
             color: white;
             font-size: 2em; /* Reduced font size for better fit */
-            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; /* Reduced shadow intensity */
+            /* Use the animated text shadow from the original snippet */
+            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 10px;
@@ -387,6 +388,20 @@
             /* Allow text to wrap if needed */
             word-break: break-word;
             line-height: 1.2;
+            /* Add animation */
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        /* Define the text glow animation */
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+                opacity: 0.9;
+            }
+            100% {
+                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px var(--accent), 0 0 50px var(--accent);
+                opacity: 1;
+            }
         }
         /* --- End of styles for embedded content --- */
 
@@ -536,8 +551,8 @@
             .articles-container {
                 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             }
-             #digitalization .article-image {
-                object-position: center 45%; /* Slightly less adjustment on smaller screens */
+             #translanguaging .article-image {
+                object-position: center 40%; /* Slightly less adjustment on smaller screens */
             }
              .embedded-content h1 {
                 font-size: 1.5em; /* Further reduce font size on medium screens */
@@ -559,8 +574,8 @@
              .article-image, .embedded-content {
                  height: 160px; /* Slightly reduce image/content height on medium screens */
             }
-             #digitalization .article-image {
-                object-position: center 50%; /* Even less adjustment on medium screens */
+             #translanguaging .article-image {
+                object-position: center 45%; /* Even less adjustment on medium screens */
             }
              .embedded-content h1 {
                 font-size: 1.8em; /* Adjust font size for medium screens */
@@ -580,8 +595,8 @@
              .article-image, .embedded-content {
                  height: 150px; /* Further reduce image/content height on smaller screens */
             }
-             #digitalization .article-image {
-                object-position: center 55%; /* Least adjustment on small screens */
+             #translanguaging .article-image {
+                object-position: center 50%; /* Least adjustment on small screens */
             }
              .embedded-content h1 {
                 font-size: 1.6em; /* Adjust font size for small screens */
@@ -617,12 +632,13 @@
              .article-image, .embedded-content {
                  height: 140px; /* Further reduce image/content height on very small screens */
             }
-             #digitalization .article-image {
-                object-position: center 60%; /* Least adjustment on very small screens */
+             #translanguaging .article-image {
+                object-position: center 55%; /* Least adjustment on very small screens */
             }
              .embedded-content h1 {
                 font-size: 1.4em; /* Adjust font size for very small screens */
-                text-shadow: 0 0 3px white, 0 0 6px white; /* Reduce shadow further */
+                /* Reduce animation intensity on very small screens if needed */
+                /* animation: textGlow 3s ease-in-out infinite alternate; */
             }
         }
     </style>
@@ -642,11 +658,11 @@
         </div>
 
         <div class="articles-container">
-            <!-- Focus Area 1 - WITH EMBEDDED IMAGE -->
+            <!-- Focus Area 1 - WITH EMBEDDED IMAGE (Adjusted) -->
             <div class="article-card" id="translanguaging">
                 <h3><i class="fas fa-exchange-alt"></i> Translanguaging Practices</h3>
                 <div class="article-content">
-                    <!-- EMBEDDED IMAGE FOR TRANSLANGUAGING -->
+                    <!-- EMBEDDED IMAGE FOR TRANSLANGUAGING (Position Adjusted) -->
                     <img src="https://github.com/oeybers-cpu/multinew/blob/main/1757352219.png?raw=true" alt="Diagram showing translanguaging practices in a multilingual classroom" class="article-image">
                     <p>Translanguaging refers to the pedagogical practice that leverages students' full linguistic repertoires to enhance learning. In African contexts, this means strategically using multiple languages within the classroom to facilitate comprehension and knowledge construction.</p>
                     <p>Research shows that translanguaging in science education, for example, helps bridge the gap between students' home languages and academic content, leading to improved epistemological access. This approach validates students' linguistic identities while promoting deeper engagement with complex subject matter.</p>
@@ -674,11 +690,11 @@
                 </div>
             </div>
 
-            <!-- Focus Area 3 - WITH EMBEDDED CONTENT ("African Languages" heading) -->
+            <!-- Focus Area 3 - WITH EMBEDDED CONTENT ("African Languages" heading with Animation) -->
             <div class="article-card" id="linguistic-rights">
                 <h3><i class="fas fa-microphone"></i> Linguistic Rights and Social Justice</h3>
                 <div class="article-content">
-                    <!-- EMBEDDED "African Languages" HEADING CONTENT -->
+                    <!-- EMBEDDED "African Languages" HEADING CONTENT with Animation -->
                     <div class="embedded-content">
                         <h1>African Languages</h1>
                     </div>
