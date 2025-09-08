@@ -354,6 +354,16 @@
             /* Standardized border for images */
             border: var(--card-border-width) solid rgba(0, 255, 255, 0.3);
         }
+
+        /* --- Specific adjustment for the image in the 'African Languages as Transformation Tools' card --- */
+        /* Target the image within the card with id 'transformation-tools' */
+        #transformation-tools .article-image {
+            /* Adjust the object-position to move the image up slightly, showing more of the face */
+            /* You can tweak the percentage values (e.g., 50% 30%) to fine-tune the position */
+            object-position: center 20%; /* Move the focus point up */
+        }
+        /* --- End of specific adjustment --- */
+
         /* --- End of added/updated styles --- */
 
         .citation {
@@ -517,6 +527,10 @@
              .article-image {
                  height: 160px; /* Slightly reduce image height on medium screens */
             }
+             #transformation-tools .article-image {
+                /* Adjust the object-position for smaller screens if needed */
+                object-position: center 25%; /* Slightly less adjustment on smaller screens */
+            }
         }
 
         @media (max-width: 768px) {
@@ -531,6 +545,9 @@
             }
              .article-image {
                  height: 150px; /* Further reduce image height on smaller screens */
+            }
+             #transformation-tools .article-image {
+                object-position: center 30%; /* Even less adjustment on small screens */
             }
         }
 
@@ -562,6 +579,9 @@
             }
              .article-image {
                  height: 140px; /* Further reduce image height on very small screens */
+            }
+             #transformation-tools .article-image {
+                object-position: center 35%; /* Least adjustment on very small screens */
             }
         }
     </style>
@@ -597,11 +617,11 @@
                 </div>
             </div>
 
-            <!-- Focus Area 2 - WITH EMBEDDED IMAGE -->
+            <!-- Focus Area 2 - WITH EMBEDDED IMAGE (Adjusted) -->
             <div class="article-card" id="transformation-tools">
                 <h3><i class="fas fa-tools"></i> African Languages as Transformation Tools</h3>
                 <div class="article-content">
-                    <!-- EMBEDDED IMAGE FOR TRANSFORMATION TOOLS -->
+                    <!-- EMBEDDED IMAGE FOR TRANSFORMATION TOOLS (Position Adjusted) -->
                     <img src="https://github.com/oeybers-cpu/multinew/blob/main/teacher_oral%20tradition.png?raw=true" alt="Teacher engaging with students in their native language, representing oral tradition and transformation" class="article-image">
                     <p>African indigenous languages serve as powerful tools for educational transformation and decolonization. When integrated into higher education, these languages can challenge the hegemony of colonial languages and make education more accessible to diverse student populations.</p>
                     <p>Transformation through African languages involves developing academic terminology, creating teaching materials, and fostering intellectual discourse in these languages. This process helps reclaim epistemological spaces that have historically been dominated by Western knowledge systems and languages.</p>
