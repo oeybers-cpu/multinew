@@ -354,16 +354,6 @@
             /* Standardized border for images */
             border: var(--card-border-width) solid rgba(0, 255, 255, 0.3);
         }
-
-        /* --- Specific adjustment for the image in the 'African Languages as Transformation Tools' card --- */
-        /* Target the image within the card with id 'transformation-tools' */
-        #transformation-tools .article-image {
-            /* Adjust the object-position to move the image up slightly, showing more of the face */
-            /* You can tweak the percentage values (e.g., 50% 30%) to fine-tune the position */
-            object-position: center 20%; /* Move the focus point up */
-        }
-        /* --- End of specific adjustment --- */
-
         /* --- End of added/updated styles --- */
 
         .citation {
@@ -527,10 +517,6 @@
              .article-image {
                  height: 160px; /* Slightly reduce image height on medium screens */
             }
-             #transformation-tools .article-image {
-                /* Adjust the object-position for smaller screens if needed */
-                object-position: center 25%; /* Slightly less adjustment on smaller screens */
-            }
         }
 
         @media (max-width: 768px) {
@@ -545,9 +531,6 @@
             }
              .article-image {
                  height: 150px; /* Further reduce image height on smaller screens */
-            }
-             #transformation-tools .article-image {
-                object-position: center 30%; /* Even less adjustment on small screens */
             }
         }
 
@@ -579,9 +562,6 @@
             }
              .article-image {
                  height: 140px; /* Further reduce image height on very small screens */
-            }
-             #transformation-tools .article-image {
-                object-position: center 35%; /* Least adjustment on very small screens */
             }
         }
     </style>
@@ -633,10 +613,12 @@
                 </div>
             </div>
 
-            <!-- Focus Area 3 -->
+            <!-- Focus Area 3 - WITH PLACEHOLDER IMAGE -->
             <div class="article-card" id="linguistic-rights">
                 <h3><i class="fas fa-microphone"></i> Linguistic Rights and Social Justice</h3>
                 <div class="article-content">
+                    <!-- PLACEHOLDER IMAGE FOR LINGUISTIC RIGHTS - Add your image URL to the src attribute -->
+                    <img src="" alt="Illustration representing linguistic rights and social justice" class="article-image">
                     <p>Linguistic rights encompass the right to use one's native language in educational, administrative, and public contexts. In African higher education, recognizing these rights is fundamental to social justice and equitable participation.</p>
                     <p>The dominance of colonial languages in African universities creates barriers for students whose first languages are marginalized. This linguistic inequality perpetuates broader social and economic disparities.</p>
                     <p>Advocating for linguistic rights involves policy reform, institutional support for multilingualism, and challenging ideologies that frame African languages as inadequate for academic discourse.</p>
@@ -647,10 +629,12 @@
                 </div>
             </div>
 
-            <!-- Focus Area 4 -->
+            <!-- Focus Area 4 - WITH LINGUISTIC RIGHTS IMAGE (MOVED HERE) -->
             <div class="article-card" id="digitalization">
                 <h3><i class="fas fa-laptop-code"></i> Digitalization of African Languages</h3>
                 <div class="article-content">
+                    <!-- MOVED LINGUISTIC RIGHTS IMAGE HERE -->
+                    <img src="https://sta.uwi.edu/uwitoday/archive/july_2018/images/art18_1.jpg" alt="Illustration representing linguistic rights and social justice (moved to Digitalization card)" class="article-image">
                     <p>The digitalization of African languages is crucial for their relevance in modern education systems. This includes developing language technologies, digital corpora, and educational resources in indigenous languages.</p>
                     <p>Current challenges include limited digital text corpora for African languages, which hinders the development of language technologies like spell checkers, translation tools, and voice recognition systems. This digital divide reinforces the marginalization of African languages.</p>
                     <p>Bridging this gap requires investment in computational linguistics, collaborative projects between universities and tech companies, and open-access repositories for language resources.</p>
@@ -661,10 +645,12 @@
                 </div>
             </div>
 
-            <!-- Focus Area 5 -->
+            <!-- Focus Area 5 - WITH PLACEHOLDER IMAGE -->
             <div class="article-card" id="intellectualization">
                 <h3><i class="fas fa-lightbulb"></i> Intellectualization of African Languages</h3>
                 <div class="article-content">
+                    <!-- PLACEHOLDER IMAGE FOR INTELLECTUALIZATION - Add your image URL to the src attribute -->
+                    <img src="" alt="Illustration representing the intellectualization of African languages" class="article-image">
                     <p>Intellectualization involves developing the capacity of African languages to handle complex academic and scientific concepts. This process includes terminology development, creating academic literature, and establishing standards for academic writing in these languages.</p>
                     <p>Contrary to misconceptions, African languages are not inherently inadequate for academic discourse—rather, they have been systematically underdeveloped through colonial educational policies and continued marginalization.</p>
                     <p>The intellectualization process requires sustained effort from academic institutions, governments, and language boards to develop comprehensive terminology databases, promote academic publishing in African languages, and integrate these languages across disciplines.</p>
