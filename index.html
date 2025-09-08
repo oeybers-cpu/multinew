@@ -354,6 +354,16 @@
             /* Standardized border for images */
             border: var(--card-border-width) solid rgba(0, 255, 255, 0.3);
         }
+
+        /* --- Specific adjustment for the image in the 'African Languages as Transformation Tools' card --- */
+        /* Target the image within the card with id 'transformation-tools' */
+        #transformation-tools .article-image {
+            /* Adjust the object-position to move the image up slightly, showing more of the face */
+            /* Increased the Y offset to 15% to bring the face into view */
+            object-position: center 15%; /* Move the focus point up */
+        }
+        /* --- End of specific adjustment --- */
+
         /* --- End of added/updated styles --- */
 
         .citation {
@@ -500,6 +510,10 @@
             .articles-container {
                 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             }
+             #transformation-tools .article-image {
+                /* Adjust the object-position for smaller screens if needed */
+                object-position: center 20%; /* Slightly less adjustment on smaller screens */
+            }
         }
 
         @media (max-width: 900px) {
@@ -517,6 +531,9 @@
              .article-image {
                  height: 160px; /* Slightly reduce image height on medium screens */
             }
+             #transformation-tools .article-image {
+                object-position: center 25%; /* Further adjust for medium screens */
+            }
         }
 
         @media (max-width: 768px) {
@@ -531,6 +548,9 @@
             }
              .article-image {
                  height: 150px; /* Further reduce image height on smaller screens */
+            }
+             #transformation-tools .article-image {
+                object-position: center 30%; /* Even less adjustment on small screens */
             }
         }
 
@@ -562,6 +582,9 @@
             }
              .article-image {
                  height: 140px; /* Further reduce image height on very small screens */
+            }
+             #transformation-tools .article-image {
+                object-position: center 35%; /* Least adjustment on very small screens */
             }
         }
     </style>
